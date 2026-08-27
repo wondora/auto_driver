@@ -7,7 +7,7 @@
     <title>GSHS 복합기 드라이버 자동 설치</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             color-scheme: light !important;
@@ -19,315 +19,250 @@
             padding: 0;
         }
 
-        html, body {
-            background-color: #ffffff !important;
-            background: #ffffff !important;
-            color: #111827 !important;
+        body {
+            background-color: #f1f5f9 !important;
+            color: #1e293b !important;
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            line-height: 1.5;
-            padding-top: 40px !important;
-            padding-bottom: 60px;
+            line-height: 1.6;
+            padding: 50px 20px;
         }
 
-        /* 컨테이너 전체 너비 제한 (880px) */
-        .container {
-            max-width: 880px;
-            width: 90%;
+        /* 이미지 스타일의 중앙 독립 카드 디자인 */
+        .card-wrapper {
+            max-width: 800px;
             margin: 0 auto;
+            background-color: #ffffff !important;
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08), 0 8px 12px -4px rgba(15, 23, 42, 0.03);
         }
 
-        /* 가운데 정렬 및 다듬어진 설명글 적용 */
+        /* 메인 헤더 & 분리선 */
         header {
-            margin-bottom: 35px;
             text-align: center;
+            margin-bottom: 32px;
         }
 
-        header h1 {
-            font-size: 34px;
-            font-weight: 700;
-            color: #111827 !important;
+        .header-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0f172a !important;
             letter-spacing: -0.02em;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        header p {
-            font-size: 17px;
-            color: #6b7280 !important;
-            font-weight: 400;
-        }
-
-        /* 심플 테두리 카드 */
-        .table-card {
-            background-color: #ffffff !important;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb !important;
-            overflow: hidden;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            background-color: #ffffff !important;
-        }
-
-        th {
-            background-color: #f9fafb !important;
-            color: #4b5563 !important;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 14px 20px;
-            border-bottom: 1px solid #e5e7eb !important;
-            white-space: nowrap;
-        }
-
-        tbody tr {
-            transition: background-color 0.15s ease, transform 0.15s ease;
-            cursor: pointer;
-            background-color: #ffffff !important;
-        }
-
-        tbody tr:hover {
-            background-color: #f9fafb !important;
-            transform: translateY(-1px);
-        }
-
-        td {
-            padding: 16px 20px;
+        .header-subtitle {
             font-size: 16px;
-            border-bottom: 1px solid #f3f4f6 !important;
-            vertical-align: middle;
-            background-color: #ffffff !important;
-            transition: background-color 0.15s ease;
-        }
-
-        tr:last-child td {
-            border-bottom: none !important;
-        }
-
-        .dept-name {
-            font-weight: 600;
-            color: #111827 !important;
-        }
-
-        .model-name {
-            color: #4b5563 !important;
+            color: #64748b !important;
             font-weight: 500;
         }
 
-        /* 줄바꿈 방지 및 고정 버튼 */
-        .btn-download {
-            display: inline-flex;
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #0d9488, #0284c7);
+            border: none;
+            margin: 24px 0 40px 0;
+            border-radius: 2px;
+            opacity: 0.8;
+        }
+
+        /* 그룹 세션 스타일 */
+        .dept-section {
+            margin-bottom: 36px;
+        }
+
+        .dept-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .dept-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0d9488 !important; /* 새로운 메인 포인트 컬러 (에메랄드/티얼) */
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        /* 이미지 스타일의 포인트 레프트 바 박스 */
+        .model-box {
+            background-color: #f0fdf4 !important; /* 옅은 민트/세이지 배경 tone */
+            border-left: 5px solid #10b981 !important; /* 포인트 사이드 선 */
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            background-color: #2563eb !important;
-            color: #ffffff !important;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 14px;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .model-info {
+            font-size: 16px;
             font-weight: 600;
+            color: #334155 !important;
+        }
+
+        .model-info span {
+            color: #0f172a !important;
+            font-weight: 700;
+        }
+
+        /* 세련된 텍스트다운로드 링크 스타일 */
+        .download-link {
+            color: #0284c7 !important;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            border: 1px solid #bae6fd;
+            transition: all 0.2s ease;
             white-space: nowrap;
-            transition: background-color 0.15s ease;
         }
 
-        .btn-download:hover {
-            background-color: #1d4ed8 !important;
+        .download-link:hover {
+            background-color: #0284c7 !important;
+            color: #ffffff !important;
+            border-color: #0284c7 !important;
         }
 
-        .btn-download svg {
-            width: 15px;
-            height: 15px;
-            fill: none;
-            stroke: #ffffff !important;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            flex-shrink: 0;
+        .guide-text {
+            font-size: 14px;
+            color: #64748b !important;
+            padding-left: 8px;
+            margin-top: 6px;
         }
     </style>
 </head>
-<body style="background-color: #ffffff !important;">
+<body>
 
-    <div class="container">
+    <div class="card-wrapper">
         <header>
-            <h1>GSHS 복합기 드라이버 자동 설치</h1>
-            <p>해당 파일을 다운로드하여 실행하시면 복합기 드라이버가 자동으로 설치됩니다.</p>
+            <div class="header-title">
+                🖨️ GSHS 복합기 드라이버 자동 설치
+            </div>
+            <div class="header-subtitle">
+                해당 파일을 다운로드하여 실행하시면 복합기 드라이버가 자동으로 설치됩니다.
+            </div>
+            <hr class="divider">
         </header>
 
-        <div class="table-card">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 35%;">부서명</th>
-                        <th style="width: 45%;">모델명</th>
-                        <th style="width: 20%; text-align: right;">다운로드</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="dept-name">1학년부</td>
-                        <td class="model-name">제록스_C3060</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">1학년부</td>
-                        <td class="model-name">제록스_C4570</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">2학년부</td>
-                        <td class="model-name">제록스_C2560</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">2학년부</td>
-                        <td class="model-name">제록스_V4070</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">3학년부</td>
-                        <td class="model-name">제록스_C3060</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">3학년부</td>
-                        <td class="model-name">제록스_C4570</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">교무실</td>
-                        <td class="model-name">제록스_C5570</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">교무실</td>
-                        <td class="model-name">캐논_C45945</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">국제교류부</td>
-                        <td class="model-name">제록스_C3060G</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">물리지구과학부</td>
-                        <td class="model-name">OKI</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">물리지구과학부</td>
-                        <td class="model-name">제록스_C2570</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">수학정보과학부</td>
-                        <td class="model-name">캐논_C37930</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">인문예체능부</td>
-                        <td class="model-name">캐논_C38926KG</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">학생자치부</td>
-                        <td class="model-name">제록스_V4070</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">학생자치부</td>
-                        <td class="model-name">캐논_LBP841C</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="dept-name">화학생명과학부</td>
-                        <td class="model-name">캐논_C39935KG</td>
-                        <td style="text-align: right;">
-                            <a href="#" class="btn-download">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                다운로드
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- 1학년부 -->
+        <div class="dept-section">
+            <div class="dept-title">1학년부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C3060</span></div>
+                <a href="https://file.gs.hs.kr/sharing/DfWZTLdKR" class="download-link">[다운로드]</a>
+            </div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C4570</span></div>
+                <a href="https://file.gs.hs.kr/sharing/S8rK2ysVU" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 2학년부 -->
+        <div class="dept-section">
+            <div class="dept-title">2학년부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C2560</span></div>
+                <a href="https://file.gs.hs.kr/sharing/ImWA59TBi" class="download-link">[다운로드]</a>
+            </div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_V4070</span></div>
+                <a href="#" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 3학년부 -->
+        <div class="dept-section">
+            <div class="dept-title">3학년부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C3060</span></div>
+                <a href="https://file.gs.hs.kr/sharing/vvODuuqVx" class="download-link">[다운로드]</a>
+            </div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C4570</span></div>
+                <a href="https://file.gs.hs.kr/sharing/biUO5hLfd" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 교무실 -->
+        <div class="dept-section">
+            <div class="dept-title">교무실</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C5570</span></div>
+                <a href="https://file.gs.hs.kr/sharing/1hsfKlnIW" class="download-link">[다운로드]</a>
+            </div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>캐논_C45945</span></div>
+                <a href="https://file.gs.hs.kr/sharing/7iUeLlC6V" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 국제교류부 -->
+        <div class="dept-section">
+            <div class="dept-title">국제교류부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C3060G</span></div>
+                <a href="https://file.gs.hs.kr/sharing/4qDYaWQ1D" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 물리지구과학부 -->
+        <div class="dept-section">
+            <div class="dept-title">물리지구과학부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>OKI</span></div>
+                <a href="https://file.gs.hs.kr/sharing/HGort9GLo" class="download-link">[다운로드]</a>
+            </div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_C2570</span></div>
+                <a href="https://file.gs.hs.kr/sharing/yWGuAsG1t" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 수학정보과학부 -->
+        <div class="dept-section">
+            <div class="dept-title">수학정보과학부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>캐논_C37930</span></div>
+                <a href="https://file.gs.hs.kr/sharing/B0Xb8x0mC" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 인문예체능부 -->
+        <div class="dept-section">
+            <div class="dept-title">인문예체능부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>캐논_C38926KG</span></div>
+                <a href="https://file.gs.hs.kr/sharing/gxRHzJesE" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 학생자치부 -->
+        <div class="dept-section">
+            <div class="dept-title">학생자치부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>제록스_V4070</span></div>
+                <a href="https://file.gs.hs.kr/sharing/n5aQObdQX" class="download-link">[다운로드]</a>
+            </div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>캐논_LBP841C</span></div>
+                <a href="https://file.gs.hs.kr/sharing/mS88xHXYB" class="download-link">[다운로드]</a>
+            </div>
+        </div>
+
+        <!-- 화학생명과학부 -->
+        <div class="dept-section">
+            <div class="dept-title">화학생명과학부</div>
+            <div class="model-box">
+                <div class="model-info">모델명 : <span>캐논_C39935KG</span></div>
+                <a href="https://file.gs.hs.kr/sharing/roUN8RCj9" class="download-link">[다운로드]</a>
+            </div>
         </div>
     </div>
 
